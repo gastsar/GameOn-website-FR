@@ -77,7 +77,10 @@ img {
 }
 
 @media screen and (max-width: 768px) {
-  .topnav.responsive {position: relative;}
+  .topnav.responsive {
+    z-index: 2;
+  }
+
   .topnav.responsive .icon {
     position: absolute;
     right: 0;
@@ -186,6 +189,7 @@ main {
 .modal-body {
   padding: 15px 8%;
   margin: 15px auto;
+ 
 }
 
 label {
@@ -219,6 +223,7 @@ input {
   line-height: 0.3;
   opacity: 0;
   transition: 0.3s;
+  position: relative;
 }
 .formData[data-error-visible="true"]::after {
   opacity: 1;
@@ -226,12 +231,12 @@ input {
 .formData[data-error-visible="true"] .text-control {
   border: 2px solid #e54858;
 }
-/* 
+
 input[data-error]::after {
     content: attr(data-error);
     font-size: 0.4em;
     color: red;
-} */
+} 
 .checkbox-label,
 .checkbox2-label {
   position: relative;
@@ -322,7 +327,7 @@ input[data-error]::after {
   transform: rotate(-45deg);
 }
 .btn-submit,
-.btn-signup {
+.btn-signup,.btn-close {
   background: #fe142f;
   display: block;
   margin: 0 auto;
@@ -526,4 +531,30 @@ footer {
     opacity: 1;
   }
 }
-
+.formData{
+  position: relative;
+}
+.signUp{
+  display: none;
+  text-align: center;
+}
+.signUp p{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.btn-close{
+  position: absolute;
+  bottom: 40px;
+  right: 28%;
+}
+input.valid {
+  border:2px solid #159903;
+}
+.error {
+  color: red;
+  font-size: 12px;
+  margin-bottom: 5px;
+  font-weight: lighter;
+}
